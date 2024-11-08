@@ -1,0 +1,270 @@
+:root {
+    /* Fuentes */
+    --fuentePrincipal: 'PT Sans', Arial, sans-serif;
+    --fuenteParrafos: 'Open Sans', Helvetica, sans-serif;
+
+     /* Paleta de colores */
+    --primario:#FFFFFF;
+    --secundario: #03045e;
+    --terciario: #FFA500;
+    --piePagina:#3f3f3e;
+    --textoOscuro: #333333;
+    --textoClaro: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none; /* Elimina todos los bordes */
+}
+
+body {
+    font-family: var(--fuenteParrafos); 
+    color: var(--textoOscuro);
+    background: var(--primario); 
+}
+
+.presentacion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.presentacion h3{
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--secundario);
+}
+
+.presentacion div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.presentacion div .imagen img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.presentacion div .presentacionGPS{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.presentacion div .presentacionGPS h2{
+    font-size: 2rem;
+    text-align: center;
+    color: var(--secundario);
+}
+
+.presentacion div .presentacionGPS p{
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 1.5; /* Ajusta la altura de línea */
+}
+
+.identidad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.identidad h3 {
+    font-size: 2rem;
+    color: var(--secundario);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.identidad > div {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.mision, .vision, .valores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    flex-basis: 30%;
+    padding: 1.5rem;
+    height: 250px;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--secundario);
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+/* Efecto de zoom y borde al pasar el cursor */
+.mision:hover, .vision:hover, .valores:hover {
+    transform: scale(1.05);
+    border: 3px solid var(--terciario);
+}
+
+/* Estado inicial: todos los elementos con opacidad completa */
+.identidad > div > * {
+    opacity: 1;
+}
+
+/* Al hacer hover en el contenedor, todos los elementos se vuelven opacos */
+.identidad > div:hover > * {
+    opacity: 0.3;
+}
+
+/* Mantiene el elemento en hover con opacidad completa */
+.identidad > div > *:hover {
+    opacity: 1;
+}
+
+/* Estilos de texto en elementos individuales */
+.mision h2, .vision h2, .valores h2 {
+    font-size: 1.5rem;
+    color: var(--secundario);
+    margin-bottom: 0.5rem;
+    color: var(--textoClaro);
+}
+
+.mision p, .vision p, .valores ul {
+    text-align: center;
+    color: var(--textoOscuro);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--textoClaro);
+    margin: 0;
+}
+
+.valores ul {
+    list-style: none;
+    padding: 0;
+}
+
+.valores li {
+    margin: 0.25rem 0;
+}
+
+.opcion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.opcion h2{
+    text-align: center;
+    color: var(--secundario);
+    font-size: 2rem;
+}
+
+.opcion > div{
+    background-image: url(../../src/imagenes/carretera.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 550px;
+}
+
+.opcion > div > .fondo{
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    padding:6rem;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.opcion > div > .fondo > h2{
+    color: var(--textoClaro);
+    font-size: 2rem;
+}
+
+.opcion > div > .fondo > p{
+    color: var(--textoClaro);
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+
+.opcion > div > .fondo > h3{
+    color: var(--textoClaro);
+    font-size: 2rem;
+    font-style: italic;
+}
+
+/*Animaciones*/
+@keyframes slideInAndFade {
+    from {
+        opacity: 0; /* Transparente al inicio */
+        transform: translateY(20px); /* Opcional: un pequeño desplazamiento para el efecto de deslizamiento */
+    }
+    to {
+        opacity: 1; /* Totalmente opaco al final */
+        transform: translateY(0);
+    }
+}
+
+
+.presentacion, .identidad, .opcion {
+    animation: slideInAndFade 2s ease-out; /* Reducción del tiempo de animación */
+}
+
+
+@media (max-width: 768px) {
+    .presentacion h3 {
+        font-size: 1.75rem;
+    }
+
+    .presentacion div {
+        flex-direction: column;
+    }
+
+    .presentacion div .presentacionGPS h2 {
+        font-size: 1.5rem;
+    }
+
+    .identidad h3 {
+        font-size: 1.5rem;
+    }
+
+    .mision, .vision, .valores {
+        width: 100%;
+    }
+
+    .opcion > div {
+        height: 300px;
+    }
+
+    .opcion > div > .fondo {
+        padding: 1.5rem;
+    }
+
+    .opcion > div > .fondo > h2,
+    .opcion > div > .fondo > p,
+    .opcion > div > .fondo > h3 {
+        font-size: 1rem;
+    }
+}

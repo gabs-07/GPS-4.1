@@ -1,0 +1,50 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: var(--piePagina);
+    width: 100%;
+    height: auto;
+    
+}
+
+footer > h3{
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--textoClaro);
+}
+
+footer > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+footer > div > img{
+    width: 12%;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    mix-blend-mode:color-burn;
+}
+
+/*Animaciones*/
+@keyframes slideInAndFade {
+    from {
+        opacity: 0; /* Transparente al inicio */
+        transform: translateY(20px); /* Opcional: un pequeño desplazamiento para el efecto de deslizamiento */
+    }
+    to {
+        opacity: 1; /* Totalmente opaco al final */
+        transform: translateY(0);
+    }
+}
+
+
+.presentacion, .identidad, .opcion {
+    animation: slideInAndFade 2s ease-out; /* Reducción del tiempo de animación */
+}

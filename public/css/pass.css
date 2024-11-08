@@ -1,0 +1,42 @@
+body {
+    background: linear-gradient(red, black);
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    height: 100vh;           /* Usa toda la altura de la ventana */
+    margin: 0;               /* Elimina los márgenes */
+    color: white;
+    font-family: "Futura Std Condensed Light", sans-serif; /* Fuente corregida */
+    text-align: center;      /* Alineación general del contenido */
+}
+
+.restauracion {
+    width: 300px; /* Define un ancho para el div */
+    padding: 20px;
+    border: 1px solid white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Corregido valor rgba */
+    background-color: transparent;
+}
+
+.restauracion p {
+    text-align: justify; /* Solo justifica el texto dentro del párrafo */
+}
+
+.campoLabel {
+    text-align: left;
+}
+
+.campoLabelPass {
+    width: 100%;
+    padding: 5px 1px;
+    margin: 8px 1px;
+    border-radius: 10px;
+}
+
+.campoEnviar {
+    width: 50%;
+    padding: 5px 10px;
+    margin: 8px 70px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
